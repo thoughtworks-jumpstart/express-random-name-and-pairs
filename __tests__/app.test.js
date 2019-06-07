@@ -17,11 +17,14 @@ describe('app', () => {
       const response = await request(app).get('/name');
 
       expect(response.statusCode).toEqual(200);
-      expect(response.text.split(' ')[0]).toEqual('1.');
+      expect(response.text).toEqual('1. apple');
+    });
 
-      expect(
-        NameHelper.names.includes(response.text.split(' ')[1])
-      ).toBeTruthy();
+    it('GET should regenerate the list when exhausted', async () => {
+      expect((await request(app).get('/name')).text).toEqual('2. banana');
+      expect((await request(app).get('/name')).text).toEqual('3. orange');
+      expect((await request(app).get('/name')).text).toEqual('4. pear');
+      expect((await request(app).get('/name')).text).toEqual('1. apple');
     });
   });
 
