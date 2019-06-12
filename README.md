@@ -26,6 +26,16 @@ The purposes of this lab are as follows
 - i.e. the name is not in the list when deleting
 - i.e. name to replace is not in the list or new name provided is in the list
 
+### optional challenge
+
+- Do not attempt this part of the lab before done with above
+- Schema validation let you predefine a structure that you expects
+- this allows you decouple the validation logic into middleware
+
+1. npm install https://www.npmjs.com/package/@hapi/joi or another schema validator.
+2. write a function that that takes in a JSON and validate it.
+3. move the validation logic from the route handler to middleware. There should not be any logic change and all test should still pass.
+
 ## Start the app
 
 ```
