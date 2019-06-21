@@ -1,5 +1,5 @@
 module.exports.names = [
-  'Jessen',
+  'Jenssen',
   'Kai',
   'Shalini',
   'Gaurav',
